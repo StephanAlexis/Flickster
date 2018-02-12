@@ -30,7 +30,7 @@ public class MoviesAdapter extends ArrayAdapter<Movie> {
         ImageView ivImage;
     }
 
-    int orientation;
+    private int orientation;
     public MoviesAdapter(Context context, List<Movie> movies, int orientation) {
         super(context, android.R.layout.simple_list_item_1,movies);
         this.orientation=orientation;
@@ -61,6 +61,7 @@ public class MoviesAdapter extends ArrayAdapter<Movie> {
 
         viewHolder.tvTitle.setText(movie.getOriginalTitle());
         viewHolder.tvOverview.setText(movie.getOverview());
+        //Rounded
         if(orientation== Configuration.ORIENTATION_PORTRAIT)
             Picasso.with(getContext()).load(movie.getPosterPath()).transform(new RoundedCornersTransformation(15,15)).into(viewHolder.ivImage);
         else

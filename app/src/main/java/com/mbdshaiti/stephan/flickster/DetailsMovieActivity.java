@@ -26,6 +26,7 @@ public class DetailsMovieActivity extends AppCompatActivity {
         TextView tvPopularity= (TextView) findViewById(R.id.tvPopularity);
         tvPopularity.setText("Popularity: "+m.getPopularity());
         ImageView ivImage=(ImageView) findViewById(R.id.ivImageDetails);
+        //Rounded
         Picasso.with(this).load(m.getPosterPath()).transform(new RoundedCornersTransformation(15,15)).into(ivImage);
     }
 }
