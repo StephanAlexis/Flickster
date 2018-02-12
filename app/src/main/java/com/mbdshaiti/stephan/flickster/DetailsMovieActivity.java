@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.mbdshaiti.stephan.flickster.models.Movie;
 import com.squareup.picasso.Picasso;
 
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+
 public class DetailsMovieActivity extends AppCompatActivity {
 
     @Override
@@ -24,6 +26,6 @@ public class DetailsMovieActivity extends AppCompatActivity {
         TextView tvPopularity= (TextView) findViewById(R.id.tvPopularity);
         tvPopularity.setText("Popularity: "+m.getPopularity());
         ImageView ivImage=(ImageView) findViewById(R.id.ivImageDetails);
-        Picasso.with(this).load(m.getPosterPath()).into(ivImage);
+        Picasso.with(this).load(m.getPosterPath()).transform(new RoundedCornersTransformation(15,15)).into(ivImage);
     }
 }
