@@ -35,6 +35,7 @@ public class Movie implements Serializable {
         return popularity;
     }
 
+
     String originalTitle;
     String overview;
     String posterPath;
@@ -50,7 +51,6 @@ public class Movie implements Serializable {
         this.backdropPath=jsonObject.getString("backdrop_path");
         this.averageVote=jsonObject.getString("vote_average");
         this.popularity=jsonObject.getString("popularity");
-
     }
 
     public static ArrayList<Movie> fromJSONArray (JSONArray array)

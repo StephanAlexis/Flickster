@@ -3,6 +3,7 @@ package com.mbdshaiti.stephan.flickster;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.mbdshaiti.stephan.flickster.models.Movie;
@@ -26,6 +27,9 @@ public class DetailsMovieActivity extends AppCompatActivity {
         TextView tvPopularity= (TextView) findViewById(R.id.tvPopularity);
         tvPopularity.setText("Popularity: "+m.getPopularity());
         ImageView ivImage=(ImageView) findViewById(R.id.ivImageDetails);
+
+        RatingBar rbRating=(RatingBar) findViewById(R.id.ratingBar);
+        rbRating.setRating(Float.parseFloat(m.getAverageVote())*5/10);
         //Rounded
         Picasso.with(this).load(m.getPosterPath()).transform(new RoundedCornersTransformation(15,15)).into(ivImage);
     }
